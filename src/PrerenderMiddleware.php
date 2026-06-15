@@ -130,7 +130,7 @@ class PrerenderMiddleware
      */
     private function shouldShowPrerenderedPage(Request $request): bool
     {
-        $userAgent = strtolower($request->server->get('HTTP_USER_AGENT'));
+        $userAgent = strtolower((string) $request->server->get('HTTP_USER_AGENT'));
         $bufferAgent = $request->server->get('X-BUFFERBOT');
 
         $requestUri = $request->getRequestUri();
